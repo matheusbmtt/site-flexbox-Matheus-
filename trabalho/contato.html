@@ -26,7 +26,7 @@
         <h3>Contato</h3>
         <p>Se você quiser entrar em contato ou enviar sugestões, utilize o formulário abaixo:</p>
 
-        <form action="#" method="POST" style="margin-top: 1em;">
+        <form id="contatoForm" action="#" method="POST" style="margin-top: 1em;">
           <label for="nome">Nome:</label><br />
           <input type="text" id="nome" name="nome" required style="width:100%; padding: 0.5em; margin-bottom: 1em; border-radius: 4px; border: 1px solid #ccc;" />
 
@@ -38,6 +38,8 @@
 
           <button type="submit" style="background:#7b4b94; color:#fff; border:none; padding: 0.75em 1.5em; border-radius: 6px; margin-top: 1em; cursor: pointer;">Enviar</button>
         </form>
+
+        <div id="formMessage" style="margin-top:1em; font-weight:bold;"></div>
       </div>
     </section>
   </main>
@@ -45,5 +47,33 @@
   <footer>
     <p>© 2025 Justin Bieber Fã Site</p>
   </footer>
+
+  <script>
+    const form = document.getElementById('contatoForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // evita o envio tradicional
+
+      // coleta os dados do formulário
+      const nome = form.nome.value.trim();
+      const email = form.email.value.trim();
+      const mensagem = form.mensagem.value.trim();
+
+      // validação simples
+      if (!nome || !email || !mensagem) {
+        formMessage.style.color = 'red';
+        formMessage.textContent = 'Por favor, preencha todos os campos.';
+        return;
+      }
+
+      // Simular envio
+      formMessage.style.color = 'green';
+      formMessage.textContent = `Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`;
+
+      // Limpa o formulário
+      form.reset();
+    });
+  </script>
 </body>
 </html>
