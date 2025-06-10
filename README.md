@@ -46,6 +46,6 @@ O site utiliza uma paleta de cores baseada no banner principal, com tons de **ve
 3. Navegue pelas páginas pelo menu fixo no topo
 
 ---
-
+## 📸 Imagem de Exemplo
 ![tela](tela.png)
 
