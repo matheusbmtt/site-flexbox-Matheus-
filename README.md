@@ -47,5 +47,5 @@ O site utiliza uma paleta de cores baseada no banner principal, com tons de **ve
 
 ---
 
-
+![tela](tela.png)
 
